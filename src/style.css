@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Digital';
+  src: url('./fonts/DS-DIGI.TTF');
+}
+
+body {
+  background: rgb(10, 10, 10);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.gameScreen {
+  color: rgb(178, 16, 16);
+  font-family: 'Digital', sans-serif;
+  font-size: 5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 0 0.15em rgb(178, 16, 16);
+  filter: blur(0.007em);
+  margin-left:  100px;
+}
+
+.mainGame {
+  margin-top: 30px;
+  height: auto;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.geniusContainer {
+  display: grid;
+  grid-template-areas: 
+    'greenArea redArea'
+    'yellowArea blueArea';
+  grid-gap: 20px;
+  opacity: 1;
+  background-color: rgb(10, 10, 10);
+  border-radius: 100%;
+  height: 95vw;
+  width: 95vw;
+  position: relative;
+}
+
+.green {
+  grid-area: greenArea;
+  opacity: 0.5;
+  background-color: rgb(63, 184, 16);
+  border-radius: 100% 0 0 0;
+  cursor: pointer;
+}
+
+.red {
+  grid-area: redArea;
+  opacity: 0.5;
+  background-color: rgb(230, 65, 65);
+  border-radius: 0 100%  0 0;
+  cursor: pointer;
+}
+
+.yellow {
+  grid-area: yellowArea;
+  opacity: 0.5;
+  background-color: rgb(230, 214, 65);
+  border-radius: 0 0 0 100%;
+  cursor: pointer;
+}
+
+.blue {
+  grid-area: blueArea;
+  opacity: 0.5;
+  background-color: rgb(65, 65, 230);
+  border-radius: 0 0 100% 0;
+  cursor: pointer;
+}
+
+.centerContainer {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  border-radius: 100%;
+  background-color: rgb(10, 10, 10);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: 50%;
+  translate: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  color: rgb(201, 201, 201);
+  font-size: 3.5vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 650;
+}
+
+.start {
+  border-radius:100%;
+  background-color: azure;
+  ;
+}
+
+.selected {
+  opacity: 1;
+  animation: animate 8s linear infinite;
+  filter: blur(0.07em);
+}
+
+@media only screen and (min-width: 763px) {
+
+  header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .geniusContainer {
+    height: 750px;
+    width: 750px;
+  }
+}
